@@ -84,34 +84,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>##hexo搭建<br>请参考这个链接<a href="http://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">http://www.cnblogs.com/fengxiongZz/p/7707219.html</a></p>
-<p>###问题一</p>
-<p>在生成以及部署文章之前，需要安装一个扩展，命令：npm install hexo-deployer-git –save，使用这个命令可能会出现“A complete log of this run can be fund in: C\Users\用户\AppData\Roaming\npm-cache_logs\2018-9-24T10_55_24_806Z-debug.log”这个错误，这是由于项目中多次安装模板失败引起，解决方法：</p>
-<ol>
-<li>将node_modules文件删除（本人亲试，不删除好像也可以）</li>
-<li>输入命令：npm cache clean –force 清楚缓存</li>
-<li>输入命令：npm install 重新安装一次</li>
-</ol>
-<p>###问题二</p>
-<p>在生成新文章之后使用“hexo d -g”命令部署文章到github中，可能会出现这样的情况“warning: LF will be replaced by CRLF | fatal: CRLF would be replaced by LF”这是因为Windows使用回车和换行两个字符来结束一行，而Mac和Linux只使用换行一个字符。而git提供了一个换行符检查功能：</p>
-<ol>
-<li>false 不做任何检查</li>
-<li>warn  在提交时检查并警告</li>
-<li>true  在提交时检查，如果发现混用则拒绝</li>
-</ol>
-<p>解决办法：</p>
-<p>输入命令：git config –global core.autocrlf false</p>
-<p>###问题三</p>
-<p>部署完文章打开网站却没有显示，这是因为需要时间缓冲不能立即成功，可以在输入命令“hexo d -g”之前输入“hexo clean”,先清除缓存，可以快速部署成功。</p>
-<p>###问题四</p>
-<p><img src="https://i.imgur.com/LB9HGxL.png" alt=""></p>
-<p>hexo d是发布到github的命令，目测你的错误是链接到github超时。https的默认端口是443 可能是因为网速的原因，可以再次尝试。</p>
-
+        <p>##hexo搭建<br>请参考这个链接<a href="http://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">http://www.cnblogs.com/fengxiongZz/p/7707219.html</a></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/03/hexo搭建及部分问题/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/04/03/hexo搭建及部分问题/" data-id="cju1c6uge00003svaktjbv7m3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/04/03/hexo搭建及部分问题/" data-id="cju1cfq720000rgvax3qdgq5q" class="article-share-link">Share</a>
       
       
     </footer>
