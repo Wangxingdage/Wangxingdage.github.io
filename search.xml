@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>hexo搭建及部分问题</title>
+      <link href="/2019/04/03/hexo%E6%90%AD%E5%BB%BA%E5%8F%8A%E9%83%A8%E5%88%86%E9%97%AE%E9%A2%98/"/>
+      <url>/2019/04/03/hexo%E6%90%AD%E5%BB%BA%E5%8F%8A%E9%83%A8%E5%88%86%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<p>##hexo搭建</p><p>请参考这个链接<a href="http://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">http://www.cnblogs.com/fengxiongZz/p/7707219.html</a></p><a id="more"></a><p>###问题一</p><p>在生成以及部署文章之前，需要安装一个扩展，命令：npm install hexo-deployer-git –save，使用这个命令可能会出现“A complete log of this run can be fund in: C\Users\用户\AppData\Roaming\npm-cache_logs\2018-9-24T10_55_24_806Z-debug.log”这个错误，这是由于项目中多次安装模板失败引起，解决方法：</p><ol><li>将node_modules文件删除（本人亲试，不删除好像也可以）</li><li>输入命令：npm cache clean –force 清楚缓存</li><li>输入命令：npm install 重新安装一次</li></ol><p>###问题二</p><p>在生成新文章之后使用“hexo d -g”命令部署文章到github中，可能会出现这样的情况“warning: LF will be replaced by CRLF | fatal: CRLF would be replaced by LF”这是因为Windows使用回车和换行两个字符来结束一行，而Mac和Linux只使用换行一个字符。而git提供了一个换行符检查功能：</p><ol><li>false 不做任何检查</li><li>warn  在提交时检查并警告</li><li>true  在提交时检查，如果发现混用则拒绝</li></ol><p>解决办法：</p><p>输入命令：git config –global core.autocrlf false</p><p>###问题三</p><p>部署完文章打开网站却没有显示，这是因为需要时间缓冲不能立即成功，可以在输入命令“hexo d -g”之前输入“hexo clean”,先清除缓存，可以快速部署成功。</p><p>###问题四</p><p><img src="https://img2018.cnblogs.com/blog/1442702/201904/1442702-20190403230312023-1949033585.jpg" alt=""></p><p>hexo d是发布到github的命令，目测你的错误是链接到github超时。https的默认端口是443 可能是因为网速的原因，可以再次尝试。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Web题</title>
+      <link href="/2018/09/23/Web%E9%A2%98/"/>
+      <url>/2018/09/23/Web%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<p>#web测试（1）</p><hr><p>##签到（2）<br><img src="https://i.imgur.com/Kdn6uTG.png" alt=""><br><a id="more"></a></p><p>看上去似乎很简单，不就是把下面的口令输进去吗？复制粘贴，大功告成。咦，不对，就知道没那么容易，手打一遍，发现只能输10位，最后一位打不上去。ok，知道问题了，F12，查看源代码，发现有一个maxlength=10，就是最大长度为10，果断改成11，再输入，完美得到flag</p><p><img src="https://i.imgur.com/NsUW1S7.png" alt=""></p><hr><p>##层层递进<br>点开题目连接，出来一个网页，第一直觉让我查看了源代码，呃———，代码还真不少，一脸懵逼。怀着瞎猫碰上死耗子的想法，把能点开的都给它点了，这时候你会发现好像越点越多，怎么也点不完，怎么办？抓包吧。不过就在这时，我突然想起来了题目名字“层层递进”，有猫腻，所以我又乱点一通，嘿嘿，总算逮到你了：<br><img src="https://i.imgur.com/gR1oVWR.png" alt=""></p><p>就是这个“.html”，点开后你会发现之后的页面一有它，我的直觉又告诉我就是它，那就点呗，点啊点，点啊点，没了….,然后我就读了一个及其操蛋无聊还没任何作用的故事！！！我很乐意跟你们分享一下：<br>来来来，听我讲个故事：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">有一天，我终于决定要和他表白了！话到嘴边，鼓起勇气...</span><br><span class="line"></span><br><span class="line">可是我却又害怕的后退了。。。</span><br><span class="line"></span><br><span class="line">为什么？</span><br><span class="line">为什么我这么懦弱？</span><br><span class="line"></span><br><span class="line">最后，他居然向我表白了，好开森...说只要骗足够多的笨蛋来这里</span><br><span class="line"></span><br><span class="line">听这个蠢故事浪费时间，</span><br><span class="line">他就同意和我交往！</span><br><span class="line">谢谢你给出的一份支持！哇哈哈</span><br></pre></td></tr></table></figure><p>怎样，够无聊吧！，怎么可能会没有，我仔细观察，发现了这个<br><img src="https://i.imgur.com/OCeoUcl.png" alt=""><br>颜色与众不同，然后你惊喜的发现中间的字母数字竖着读就是答案了，出题的都是人才。。。。。。</p><hr><p>##php decode<br>先上图：<br><img src="https://i.imgur.com/C4YhkYh.png" alt=""><br>这就是我们要破解的代码了，代码并不难懂，可以看出是先给$ZzvSWE赋值，经过一系列不明觉厉的操作返回的$ZzvSWE就是我们要的flag，所以我们把“eval”改成“echo”，在我们的php编译器上，或者在线网站上输出出来，ok，谜题揭晓：</p><p>flag:nctf{gzip_base64_hhhhhh}</p><hr><p>##/X00</p><p><img src="https://i.imgur.com/V1CteOq.png" alt=""><br>我们来瞅瞅代码，第二个if告诉我们必须输入数字，如果不是数字输出“必须输入数字”；else if要求我们输入的值中必须含有“#biubiubiu”才能输出flag，else其他情况输出“骚年，继续努力吧啊~”。<br>你可能感觉不可能（好多题都是那么让人感觉不可思议）,z这里其实是要求我们用“截断”，根据题意，我使用了“/X00”的截断方式，在网址栏输入“？nctf=1%00%23biubiubiu”，当读到%00，就会停止读，认为是数字，排除第一个情况，另外在url中有些特殊符号不能直接传递，所以用%加上ascll码表中数值的十六进制格式，#码值35，就是%23。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第二周</title>
+      <link href="/2018/09/16/%E7%AC%AC%E4%BA%8C%E5%91%A8/"/>
+      <url>/2018/09/16/%E7%AC%AC%E4%BA%8C%E5%91%A8/</url>
+      
+        <content type="html"><![CDATA[<p>#php学习</p><hr><p>##php简介</p><p>php是一种创建动态交互性站点的强有力的服务器端脚本语言。php完全免费，每个人都可以使用。一般情况下，我们安装的浏览器都可以打开。我们可以使用电脑上的记事本编译，将文件后缀改成.php即可，无需下载其他编译器。如果你的浏览器不能打开，请登录官方网站“<a href="http://php.net/manual/zh/install.php”" target="_blank" rel="noopener">http://php.net/manual/zh/install.php”</a> 查看攻略。Windows下载 WebMatrix 可以立即运行 PHP。</p><a id="more"></a><p>###特点<br>运行于各种平台（Windows, Linux, Unix等），兼容几乎所有服务器（Apache, IIS 等等），支持多种数据库，免费，易于学习，并可高效地运行在服务器端</p><p>###功能</p><pre><code>PHP 能够生成动态页面内容PHP 能够创建、打开、读取、写入、删除以及关闭服务器上的文件PHP 能够接收表单数据PHP 能够发送并取回 cookiesPHP 能够添加、删除、修改数据库中的数据PHP 能够限制用户访问网站中的某些页面PHP 能够对数据进行加密</code></pre><p>通过 PHP，您可以不受限于只输出 HTML。您还能够输出图像、PDF 文件、甚至 Flash 影片。</p><p>##php语法<br>php 脚本可以放置文件任何位置<br>PHP 脚本以 &lt;?php 开头，以 ?&gt; 结尾<br>PHP 文件通常包含 HTML 标签以及一些 PHP 脚本代码。<br>代码示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  &lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;我的第一张 PHP 页面&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">echo &quot;Hello World!&quot;; //输出</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p><p>&lt;!DOCTYPE html&gt;声明必须位于 HTML5 文档中的第一行，也就是位于 <html> 标签之前。该标签告知浏览器文档所使用的 HTML 规范。<br>上述示例中“ /<em> </em>/ ”与“ // ”都是php中的注释，php注释有三种方式，还一种为“ # ”。其中“ /<em> </em>/ ”为多行注释，其他两种为单行注释。</html></p><p>php语句对于大小写不敏感，“ ECHO ”也可以.</p><p>php的输出有两种语句，一个为echo，一个为print。echo能够输出一个以上的字符串，print 只能输出一个字符串，并始终返回 1。因此echo 比 print 稍快，因为它不返回任何值。</p><p>PHP 语句以分号结尾（;）。PHP 代码块的关闭标签也会自动表明分号（因此在 PHP 代码块的最后一行不必使用分号）。</p><p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo&quot;hello world&quot;或者echo&quot;hello&quot;,&quot;world&quot; //echo 或 echo() 均可</span><br><span class="line">print只能为&quot;hello world&quot; //print 与 print() 均可</span><br></pre></td></tr></table></figure></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$x=5; // 全局作用域</span><br><span class="line"></span><br><span class="line">function Test() &#123;</span><br><span class="line">  $y=10; // 局部作用域</span><br><span class="line">&#125;</span><br><span class="line">myTest();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure><p>$x,$y都是变量，在函数Test外面为全局变量，里面为局部变量。全局变量只能在函数外输出，局部变量只能在函数里面输出。<br>变量的定义与特点：</p><ol><li>以$开头，后面为变量名称</li><li>只能以下划线或者字母开头，不能为特殊符号和数字</li><li>只能由数字，字母，下划线组成</li><li>变量名称大小写敏感</li><li>变量会在首次为其赋值时被创建，不必告知 PHP 变量的数据类型PHP 根，据它的值，自动把变量转换为正确的数据类型。</li></ol><hr><p>##做题技巧（不全）<br>php弱类型<br>两种比较方式：“==”，“===”，=== 在进行比较的时候，会先判断两种字符串的类型是否相等，再比较，== 在进行比较的时候，会先将字符串类型转化成相同，再比较。（如果比较一个数字和字符串或者比较涉及到数字内容的字符串，则字符串会被转换成数值并且比较按照数值来进行.）<br>“admin”==0 比较的时候，会将admin转化成数值，强制转化,由于admin是字符串，转化的结果是0自然和0相等<br>“0e123456”==”0e456789”相互比较的时候，会将0e这类字符串识别为科学技术法的数字，0的无论多少次方都是零，所以相等.<br>admin1=0，1admin=1（字符串的开始部分决定了它的值，如果该字符串以合法的数值开始，则使用该数值，否则其值为0。）</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>简单扫描器</title>
+      <link href="/2018/08/02/%E7%AE%80%E5%8D%95%E6%89%AB%E6%8F%8F%E5%99%A8/"/>
+      <url>/2018/08/02/%E7%AE%80%E5%8D%95%E6%89%AB%E6%8F%8F%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">from socket import *  # 引入socket库</span><br><span class="line">import threading  # 线程</span><br><span class="line">lock = threading.Lock()  # 创建一个锁</span><br><span class="line">times=0  # 开放的端口数</span><br><span class="line"></span><br><span class="line">def portscanner(host, port):</span><br><span class="line">    global times  #在函数中使用全局变量</span><br><span class="line">    try:</span><br><span class="line">    s= socket(AF_INET, SOCK_STREAM)  # 创建一个socket对象</span><br><span class="line">    s.connect((host, port))  # 尝试连接</span><br><span class="line">        lock.acquire()  # 上锁，仅供一个线程使用</span><br><span class="line">        print(&quot;%d is open&quot;%port)  # 输出开放的端口</span><br><span class="line">        times += 1</span><br><span class="line">        lock.release()  #解锁，释放资源以供其他线程使用</span><br><span class="line">        s.close()  # 关闭</span><br><span class="line">    except:</span><br><span class="line">        pass</span><br><span class="line">def main():</span><br><span class="line">    threads = []</span><br><span class="line">    for i in range(1,76):</span><br><span class="line">        for p in range((i-1)*880,i*880):</span><br><span class="line">            t = threading.Thread(target = portscanner, args = (&quot;127.0.0.1&quot;, p))  # 创建线程 </span><br><span class="line">            threads.append(t)</span><br><span class="line">            t.start()  # 打开线程</span><br><span class="line">        for t in threads:</span><br><span class="line">            pass</span><br><span class="line">        t.join()  # 在子线程还没有完成时，一直阻止父线程完成</span><br><span class="line">    print(&quot;The scan is complete&quot;)</span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>敏感词汇代替</title>
+      <link href="/2018/07/31/%E6%95%8F%E6%84%9F%E8%AF%8D%E6%B1%87%E4%BB%A3%E6%9B%BF/"/>
+      <url>/2018/07/31/%E6%95%8F%E6%84%9F%E8%AF%8D%E6%B1%87%E4%BB%A3%E6%9B%BF/</url>
+      
+        <content type="html"><![CDATA[<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例:"></a>代码示例:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">word = input(&quot;请输入一句话: &quot;)</span><br><span class="line">file = open(&quot;filter.txt&quot;, &apos;r&apos;)</span><br><span class="line">result = &quot;&quot;</span><br><span class="line">for filter_word in file:</span><br><span class="line">if filter_word.strip() in word:</span><br><span class="line">    result = word.replace(filter_word.strip(), &quot;*&quot;)</span><br><span class="line">    word = result</span><br><span class="line">file.close()</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure><hr><a id="more"></a><p>###filter.txt:<br>[黑产， 网马， 暗链， 挖矿，]</p><hr><h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><ol><li><p>首先先分析题意，要求我们要输入一句话，如果其中有的词汇在我们包含敏感词汇的文档中，那么就使用’ * ‘来替代。</p></li><li><p>开始编写代码，输入句子，打开文件（注意：文件一定要在同一目录下），创建一个对象，另外输入的句子中可能不只包含一个敏感词汇，所以我们要使用循环，将其中所有敏感词汇筛选出来，进行替代，这里我使用了for循环。</p></li><li>这里使用了open（文件迭代器）以只读的方式打开，会在末尾添加一个字符，所以使用了strip()函数（删除开头或结尾的字符）</li><li>每一次循环修改后的句子都会赋值给result，然后再将result的值赋值给word继续循环，筛选并修改其他的敏感词汇，最终全部修改完毕。</li><li>关闭打开的文件，并输出修改完成的句子，会发现凡是文件中含有的敏感词汇，全部被’ * ‘替代。</li></ol><hr><p>###例：<br>    输入：我创建一个网站，其中我注入了挖矿脚本</p><pre><code>输出：我创建一个网站，其中我注入了**脚本</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>

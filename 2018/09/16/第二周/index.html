@@ -4,12 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo搭建及部分问题, Hexo">
-    <meta name="description" content="##hexo搭建
-请参考这个链接http://www.cnblogs.com/fengxiongZz/p/7707219.html
+    <meta name="keywords" content="第二周, Hexo">
+    <meta name="description" content="#php学习
 
-###问题一
-在生成以及部署文章之前，需要安装一个扩展，命令：npm install hexo-deplo">
+##php简介
+php是一种创建动态交互性站点的强有力的服务器端脚本语言。php完全免费，每个人都可以使用。一般情况下，我们安装的浏览器都可以打开。我们可以使用电脑上的记事本编译，将文件后缀改成.php即可，无需下载其他编译">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>hexo搭建及部分问题 | Hexo</title>
+    <title>第二周 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +260,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        hexo搭建及部分问题
+                        第二周
                     </div>
                 </div>
             </div>
@@ -389,7 +388,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-03
+                    2018-09-16
                 </div>
 
                 
@@ -405,30 +404,38 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>##hexo搭建</p>
-<p>请参考这个链接<a href="http://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">http://www.cnblogs.com/fengxiongZz/p/7707219.html</a></p>
+                <p>#php学习</p>
+<hr>
+<p>##php简介</p>
+<p>php是一种创建动态交互性站点的强有力的服务器端脚本语言。php完全免费，每个人都可以使用。一般情况下，我们安装的浏览器都可以打开。我们可以使用电脑上的记事本编译，将文件后缀改成.php即可，无需下载其他编译器。如果你的浏览器不能打开，请登录官方网站“<a href="http://php.net/manual/zh/install.php”" target="_blank" rel="noopener">http://php.net/manual/zh/install.php”</a> 查看攻略。Windows下载 WebMatrix 可以立即运行 PHP。</p>
 <a id="more"></a>
-<p>###问题一</p>
-<p>在生成以及部署文章之前，需要安装一个扩展，命令：npm install hexo-deployer-git –save，使用这个命令可能会出现“A complete log of this run can be fund in: C\Users\用户\AppData\Roaming\npm-cache_logs\2018-9-24T10_55_24_806Z-debug.log”这个错误，这是由于项目中多次安装模板失败引起，解决方法：</p>
+<p>###特点<br>运行于各种平台（Windows, Linux, Unix等），兼容几乎所有服务器（Apache, IIS 等等），支持多种数据库，免费，易于学习，并可高效地运行在服务器端</p>
+<p>###功能</p>
+<pre><code>PHP 能够生成动态页面内容
+PHP 能够创建、打开、读取、写入、删除以及关闭服务器上的文件
+PHP 能够接收表单数据
+PHP 能够发送并取回 cookies
+PHP 能够添加、删除、修改数据库中的数据
+PHP 能够限制用户访问网站中的某些页面
+PHP 能够对数据进行加密
+</code></pre><p>通过 PHP，您可以不受限于只输出 HTML。您还能够输出图像、PDF 文件、甚至 Flash 影片。</p>
+<p>##php语法<br>php 脚本可以放置文件任何位置<br>PHP 脚本以 &lt;?php 开头，以 ?&gt; 结尾<br>PHP 文件通常包含 HTML 标签以及一些 PHP 脚本代码。<br>代码示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  &lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;我的第一张 PHP 页面&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">echo &quot;Hello World!&quot;; //输出</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>&lt;!DOCTYPE html&gt;声明必须位于 HTML5 文档中的第一行，也就是位于 <html> 标签之前。该标签告知浏览器文档所使用的 HTML 规范。<br>上述示例中“ /<em> </em>/ ”与“ // ”都是php中的注释，php注释有三种方式，还一种为“ # ”。其中“ /<em> </em>/ ”为多行注释，其他两种为单行注释。</html></p>
+<p>php语句对于大小写不敏感，“ ECHO ”也可以.</p>
+<p>php的输出有两种语句，一个为echo，一个为print。echo能够输出一个以上的字符串，print 只能输出一个字符串，并始终返回 1。因此echo 比 print 稍快，因为它不返回任何值。</p>
+<p>PHP 语句以分号结尾（;）。PHP 代码块的关闭标签也会自动表明分号（因此在 PHP 代码块的最后一行不必使用分号）。</p>
+<p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo&quot;hello world&quot;或者echo&quot;hello&quot;,&quot;world&quot; //echo 或 echo() 均可</span><br><span class="line">print只能为&quot;hello world&quot; //print 与 print() 均可</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$x=5; // 全局作用域</span><br><span class="line"></span><br><span class="line">function Test() &#123;</span><br><span class="line">  $y=10; // 局部作用域</span><br><span class="line">&#125;</span><br><span class="line">myTest();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>$x,$y都是变量，在函数Test外面为全局变量，里面为局部变量。全局变量只能在函数外输出，局部变量只能在函数里面输出。<br>变量的定义与特点：</p>
 <ol>
-<li>将node_modules文件删除（本人亲试，不删除好像也可以）</li>
-<li>输入命令：npm cache clean –force 清楚缓存</li>
-<li>输入命令：npm install 重新安装一次</li>
+<li>以$开头，后面为变量名称</li>
+<li>只能以下划线或者字母开头，不能为特殊符号和数字</li>
+<li>只能由数字，字母，下划线组成</li>
+<li>变量名称大小写敏感</li>
+<li>变量会在首次为其赋值时被创建，不必告知 PHP 变量的数据类型PHP 根，据它的值，自动把变量转换为正确的数据类型。</li>
 </ol>
-<p>###问题二</p>
-<p>在生成新文章之后使用“hexo d -g”命令部署文章到github中，可能会出现这样的情况“warning: LF will be replaced by CRLF | fatal: CRLF would be replaced by LF”这是因为Windows使用回车和换行两个字符来结束一行，而Mac和Linux只使用换行一个字符。而git提供了一个换行符检查功能：</p>
-<ol>
-<li>false 不做任何检查</li>
-<li>warn  在提交时检查并警告</li>
-<li>true  在提交时检查，如果发现混用则拒绝</li>
-</ol>
-<p>解决办法：</p>
-<p>输入命令：git config –global core.autocrlf false</p>
-<p>###问题三</p>
-<p>部署完文章打开网站却没有显示，这是因为需要时间缓冲不能立即成功，可以在输入命令“hexo d -g”之前输入“hexo clean”,先清除缓存，可以快速部署成功。</p>
-<p>###问题四</p>
-<p><img src="https://img2018.cnblogs.com/blog/1442702/201904/1442702-20190403230312023-1949033585.jpg" alt=""></p>
-<p>hexo d是发布到github的命令，目测你的错误是链接到github超时。https的默认端口是443 可能是因为网速的原因，可以再次尝试。</p>
+<hr>
+<p>##做题技巧（不全）<br>php弱类型<br>两种比较方式：“==”，“===”，=== 在进行比较的时候，会先判断两种字符串的类型是否相等，再比较，== 在进行比较的时候，会先将字符串类型转化成相同，再比较。（如果比较一个数字和字符串或者比较涉及到数字内容的字符串，则字符串会被转换成数值并且比较按照数值来进行.）<br>“admin”==0 比较的时候，会将admin转化成数值，强制转化,由于admin是字符串，转化的结果是0自然和0相等<br>“0e123456”==”0e456789”相互比较的时候，会将0e这类字符串识别为科学技术法的数字，0的无论多少次方都是零，所以相等.<br>admin1=0，1admin=1（字符串的开始部分决定了它的值，如果该字符串以合法的数值开始，则使用该数值，否则其值为0。）</p>
 
             </div>
             <hr>
@@ -576,7 +583,7 @@
                     </span>
                     <a href="https://wangxingdage.github.io" class="b-link-green">Hexo</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/03/hexo搭建及部分问题/" class="b-link-green">hexo搭建及部分问题</a>
+                    <a href="/2018/09/16/第二周/" class="b-link-green">第二周</a>
                 </p>
             </div>
         </div>
@@ -599,46 +606,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2019/04/03/hexo搭建及部分问题/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="hexo搭建及部分问题">
-                        
-                        <span class="card-title">hexo搭建及部分问题</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">##hexo搭建
-请参考这个链接http://www.cnblogs.com/fengxiongZz/p/7707219.html
-
-###问题一
-在生成以及部署文章之前，需要安装一个扩展，命令：npm install hexo-deplo</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-03
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            John Doe
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2018/09/23/Web题/">
                     <div class="card-image">
@@ -655,8 +623,42 @@
 ##签到（2）
 看上去似乎很简单，不就是把下面的口令输进去吗？复制粘贴，大功告成。咦，不对，就知道没那么容易，手打一遍，发现只能输10位，最后一位打不上去。ok，知道问题了，F12，查看源代码，发现有一个maxleng</div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            John Doe
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/08/02/简单扫描器/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="简单扫描器">
+                        
+                        <span class="card-title">简单扫描器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">
+123456789101112131415161718192021222324252627282930from socket import *  # 引入socket库import threading  # 线程lock = thread</div>
+                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-02
                             </span>
                         <span class="publish-author">
                             

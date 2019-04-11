@@ -4,12 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo搭建及部分问题, Hexo">
-    <meta name="description" content="##hexo搭建
-请参考这个链接http://www.cnblogs.com/fengxiongZz/p/7707219.html
-
-###问题一
-在生成以及部署文章之前，需要安装一个扩展，命令：npm install hexo-deplo">
+    <meta name="keywords" content="敏感词汇代替, Hexo">
+    <meta name="description" content="代码示例:123456789word = input(&amp;quot;请输入一句话: &amp;quot;)file = open(&amp;quot;filter.txt&amp;quot;, &amp;apos;r&amp;apos;)result = &amp;quot;&amp;quot;f">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>hexo搭建及部分问题 | Hexo</title>
+    <title>敏感词汇代替 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +257,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        hexo搭建及部分问题
+                        敏感词汇代替
                     </div>
                 </div>
             </div>
@@ -389,7 +385,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-03
+                    2018-07-31
                 </div>
 
                 
@@ -405,31 +401,24 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>##hexo搭建</p>
-<p>请参考这个链接<a href="http://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">http://www.cnblogs.com/fengxiongZz/p/7707219.html</a></p>
+                <h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例:"></a>代码示例:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">word = input(&quot;请输入一句话: &quot;)</span><br><span class="line">file = open(&quot;filter.txt&quot;, &apos;r&apos;)</span><br><span class="line">result = &quot;&quot;</span><br><span class="line">for filter_word in file:</span><br><span class="line">	if filter_word.strip() in word:</span><br><span class="line">    	result = word.replace(filter_word.strip(), &quot;*&quot;)</span><br><span class="line">    	word = result</span><br><span class="line">file.close()</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<hr>
 <a id="more"></a>
-<p>###问题一</p>
-<p>在生成以及部署文章之前，需要安装一个扩展，命令：npm install hexo-deployer-git –save，使用这个命令可能会出现“A complete log of this run can be fund in: C\Users\用户\AppData\Roaming\npm-cache_logs\2018-9-24T10_55_24_806Z-debug.log”这个错误，这是由于项目中多次安装模板失败引起，解决方法：</p>
-<ol>
-<li>将node_modules文件删除（本人亲试，不删除好像也可以）</li>
-<li>输入命令：npm cache clean –force 清楚缓存</li>
-<li>输入命令：npm install 重新安装一次</li>
+<p>###filter.txt:<br>[黑产， 网马， 暗链， 挖矿，]</p>
+<hr>
+<h2 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h2><ol>
+<li><p>首先先分析题意，要求我们要输入一句话，如果其中有的词汇在我们包含敏感词汇的文档中，那么就使用’ * ‘来替代。</p>
+</li>
+<li><p>开始编写代码，输入句子，打开文件（注意：文件一定要在同一目录下），创建一个对象，另外输入的句子中可能不只包含一个敏感词汇，所以我们要使用循环，将其中所有敏感词汇筛选出来，进行替代，这里我使用了for循环。</p>
+</li>
+<li>这里使用了open（文件迭代器）以只读的方式打开，会在末尾添加一个字符，所以使用了strip()函数（删除开头或结尾的字符）</li>
+<li>每一次循环修改后的句子都会赋值给result，然后再将result的值赋值给word继续循环，筛选并修改其他的敏感词汇，最终全部修改完毕。</li>
+<li>关闭打开的文件，并输出修改完成的句子，会发现凡是文件中含有的敏感词汇，全部被’ * ‘替代。</li>
 </ol>
-<p>###问题二</p>
-<p>在生成新文章之后使用“hexo d -g”命令部署文章到github中，可能会出现这样的情况“warning: LF will be replaced by CRLF | fatal: CRLF would be replaced by LF”这是因为Windows使用回车和换行两个字符来结束一行，而Mac和Linux只使用换行一个字符。而git提供了一个换行符检查功能：</p>
-<ol>
-<li>false 不做任何检查</li>
-<li>warn  在提交时检查并警告</li>
-<li>true  在提交时检查，如果发现混用则拒绝</li>
-</ol>
-<p>解决办法：</p>
-<p>输入命令：git config –global core.autocrlf false</p>
-<p>###问题三</p>
-<p>部署完文章打开网站却没有显示，这是因为需要时间缓冲不能立即成功，可以在输入命令“hexo d -g”之前输入“hexo clean”,先清除缓存，可以快速部署成功。</p>
-<p>###问题四</p>
-<p><img src="https://img2018.cnblogs.com/blog/1442702/201904/1442702-20190403230312023-1949033585.jpg" alt=""></p>
-<p>hexo d是发布到github的命令，目测你的错误是链接到github超时。https的默认端口是443 可能是因为网速的原因，可以再次尝试。</p>
-
+<hr>
+<p>###例：<br>    输入：我创建一个网站，其中我注入了挖矿脚本</p>
+<pre><code>输出：我创建一个网站，其中我注入了**脚本
+</code></pre>
             </div>
             <hr>
 
@@ -576,7 +565,7 @@
                     </span>
                     <a href="https://wangxingdage.github.io" class="b-link-green">Hexo</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/03/hexo搭建及部分问题/" class="b-link-green">hexo搭建及部分问题</a>
+                    <a href="/2018/07/31/敏感词汇代替/" class="b-link-green">敏感词汇代替</a>
                 </p>
             </div>
         </div>
@@ -599,28 +588,24 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/04/03/hexo搭建及部分问题/">
+                <a href="/2018/08/02/简单扫描器/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="hexo搭建及部分问题">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="简单扫描器">
                         
-                        <span class="card-title">hexo搭建及部分问题</span>
+                        <span class="card-title">简单扫描器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">##hexo搭建
-请参考这个链接http://www.cnblogs.com/fengxiongZz/p/7707219.html
-
-###问题一
-在生成以及部署文章之前，需要安装一个扩展，命令：npm install hexo-deplo</div>
+                    <div class="summary">
+123456789101112131415161718192021222324252627282930from socket import *  # 引入socket库import threading  # 线程lock = thread</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-03
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-08-02
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -629,7 +614,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -637,26 +621,23 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/23/Web题/">
+                <a href="/2018/07/31/敏感词汇代替/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Web题">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="敏感词汇代替">
                         
-                        <span class="card-title">Web题</span>
+                        <span class="card-title">敏感词汇代替</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">#web测试（1）
-
-##签到（2）
-看上去似乎很简单，不就是把下面的口令输进去吗？复制粘贴，大功告成。咦，不对，就知道没那么容易，手打一遍，发现只能输10位，最后一位打不上去。ok，知道问题了，F12，查看源代码，发现有一个maxleng</div>
+                    <div class="summary">代码示例:123456789word = input(&quot;请输入一句话: &quot;)file = open(&quot;filter.txt&quot;, &apos;r&apos;)result = &quot;&quot;f</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-31
                             </span>
                         <span class="publish-author">
                             
@@ -666,6 +647,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>

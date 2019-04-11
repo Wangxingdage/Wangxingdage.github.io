@@ -4,12 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo搭建及部分问题, Hexo">
-    <meta name="description" content="##hexo搭建
-请参考这个链接http://www.cnblogs.com/fengxiongZz/p/7707219.html
-
-###问题一
-在生成以及部署文章之前，需要安装一个扩展，命令：npm install hexo-deplo">
+    <meta name="keywords" content="简单扫描器, Hexo">
+    <meta name="description" content="
+123456789101112131415161718192021222324252627282930from socket import *  # 引入socket库import threading  # 线程lock = thread">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>hexo搭建及部分问题 | Hexo</title>
+    <title>简单扫描器 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +258,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        hexo搭建及部分问题
+                        简单扫描器
                     </div>
                 </div>
             </div>
@@ -389,7 +386,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-03
+                    2018-08-02
                 </div>
 
                 
@@ -405,30 +402,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>##hexo搭建</p>
-<p>请参考这个链接<a href="http://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">http://www.cnblogs.com/fengxiongZz/p/7707219.html</a></p>
-<a id="more"></a>
-<p>###问题一</p>
-<p>在生成以及部署文章之前，需要安装一个扩展，命令：npm install hexo-deployer-git –save，使用这个命令可能会出现“A complete log of this run can be fund in: C\Users\用户\AppData\Roaming\npm-cache_logs\2018-9-24T10_55_24_806Z-debug.log”这个错误，这是由于项目中多次安装模板失败引起，解决方法：</p>
-<ol>
-<li>将node_modules文件删除（本人亲试，不删除好像也可以）</li>
-<li>输入命令：npm cache clean –force 清楚缓存</li>
-<li>输入命令：npm install 重新安装一次</li>
-</ol>
-<p>###问题二</p>
-<p>在生成新文章之后使用“hexo d -g”命令部署文章到github中，可能会出现这样的情况“warning: LF will be replaced by CRLF | fatal: CRLF would be replaced by LF”这是因为Windows使用回车和换行两个字符来结束一行，而Mac和Linux只使用换行一个字符。而git提供了一个换行符检查功能：</p>
-<ol>
-<li>false 不做任何检查</li>
-<li>warn  在提交时检查并警告</li>
-<li>true  在提交时检查，如果发现混用则拒绝</li>
-</ol>
-<p>解决办法：</p>
-<p>输入命令：git config –global core.autocrlf false</p>
-<p>###问题三</p>
-<p>部署完文章打开网站却没有显示，这是因为需要时间缓冲不能立即成功，可以在输入命令“hexo d -g”之前输入“hexo clean”,先清除缓存，可以快速部署成功。</p>
-<p>###问题四</p>
-<p><img src="https://img2018.cnblogs.com/blog/1442702/201904/1442702-20190403230312023-1949033585.jpg" alt=""></p>
-<p>hexo d是发布到github的命令，目测你的错误是链接到github超时。https的默认端口是443 可能是因为网速的原因，可以再次尝试。</p>
+                <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">from socket import *  # 引入socket库</span><br><span class="line">import threading  # 线程</span><br><span class="line">lock = threading.Lock()  # 创建一个锁</span><br><span class="line">times=0  # 开放的端口数</span><br><span class="line"></span><br><span class="line">def portscanner(host, port):</span><br><span class="line">    global times  #在函数中使用全局变量</span><br><span class="line">    try:</span><br><span class="line">    	s= socket(AF_INET, SOCK_STREAM)  # 创建一个socket对象</span><br><span class="line">    	s.connect((host, port))  # 尝试连接</span><br><span class="line">        lock.acquire()  # 上锁，仅供一个线程使用</span><br><span class="line">        print(&quot;%d is open&quot;%port)  # 输出开放的端口</span><br><span class="line">        times += 1</span><br><span class="line">        lock.release()  #解锁，释放资源以供其他线程使用</span><br><span class="line">        s.close()  # 关闭</span><br><span class="line">    except:</span><br><span class="line">        pass</span><br><span class="line">def main():</span><br><span class="line">    threads = []</span><br><span class="line">    for i in range(1,76):</span><br><span class="line">        for p in range((i-1)*880,i*880):</span><br><span class="line">            t = threading.Thread(target = portscanner, args = (&quot;127.0.0.1&quot;, p))  # 创建线程 </span><br><span class="line">            threads.append(t)</span><br><span class="line">            t.start()  # 打开线程</span><br><span class="line">        for t in threads:</span><br><span class="line">            pass</span><br><span class="line">        t.join()  # 在子线程还没有完成时，一直阻止父线程完成</span><br><span class="line">    print(&quot;The scan is complete&quot;)</span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -576,7 +551,7 @@
                     </span>
                     <a href="https://wangxingdage.github.io" class="b-link-green">Hexo</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/03/hexo搭建及部分问题/" class="b-link-green">hexo搭建及部分问题</a>
+                    <a href="/2018/08/02/简单扫描器/" class="b-link-green">简单扫描器</a>
                 </p>
             </div>
         </div>
@@ -599,28 +574,26 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/04/03/hexo搭建及部分问题/">
+                <a href="/2018/09/16/第二周/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="hexo搭建及部分问题">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第二周">
                         
-                        <span class="card-title">hexo搭建及部分问题</span>
+                        <span class="card-title">第二周</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">##hexo搭建
-请参考这个链接http://www.cnblogs.com/fengxiongZz/p/7707219.html
+                    <div class="summary">#php学习
 
-###问题一
-在生成以及部署文章之前，需要安装一个扩展，命令：npm install hexo-deplo</div>
+##php简介
+php是一种创建动态交互性站点的强有力的服务器端脚本语言。php完全免费，每个人都可以使用。一般情况下，我们安装的浏览器都可以打开。我们可以使用电脑上的记事本编译，将文件后缀改成.php即可，无需下载其他编译</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-03
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -629,7 +602,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -640,23 +612,20 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/23/Web题/">
+                <a href="/2018/07/31/敏感词汇代替/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Web题">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="敏感词汇代替">
                         
-                        <span class="card-title">Web题</span>
+                        <span class="card-title">敏感词汇代替</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">#web测试（1）
-
-##签到（2）
-看上去似乎很简单，不就是把下面的口令输进去吗？复制粘贴，大功告成。咦，不对，就知道没那么容易，手打一遍，发现只能输10位，最后一位打不上去。ok，知道问题了，F12，查看源代码，发现有一个maxleng</div>
+                    <div class="summary">代码示例:123456789word = input(&quot;请输入一句话: &quot;)file = open(&quot;filter.txt&quot;, &apos;r&apos;)result = &quot;&quot;f</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-23
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-31
                             </span>
                         <span class="publish-author">
                             
