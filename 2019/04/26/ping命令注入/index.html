@@ -4,10 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo搭建及部分问题, Hexo">
-    <meta name="description" content="hexo搭建请参考这个链接http://www.cnblogs.com/fengxiongZz/p/7707219.html
-
-问题一在生成以及部署文章之前，需要安装一个扩展，命令：npm install hexo-deployer-git">
+    <meta name="keywords" content="ping命令注入, Hexo">
+    <meta name="description" content="1.在使用ping命令，如果对方没有wsf，可以使用注入，使用符号截断，常见的符号：$’‘;’‘|’‘-’‘(’‘)’‘反引号’‘||’‘&amp;amp;&amp;amp;’‘&amp;amp;’‘}’‘{’
+几个命令： ls ,cat&amp;lt; ,cat
+格式：">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>hexo搭建及部分问题 | Hexo</title>
+    <title>ping命令注入 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -259,13 +259,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        hexo搭建及部分问题
+                        ping命令注入
                     </div>
                 </div>
             </div>
@@ -387,7 +387,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-03
+                    2019-04-26
                 </div>
 
                 
@@ -403,25 +403,20 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="hexo搭建"><a href="#hexo搭建" class="headerlink" title="hexo搭建"></a>hexo搭建</h1><p>请参考这个链接<a href="http://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">http://www.cnblogs.com/fengxiongZz/p/7707219.html</a></p>
-<a id="more"></a>
-<h2 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h2><p>在生成以及部署文章之前，需要安装一个扩展，命令：npm install hexo-deployer-git –save，使用这个命令可能会出现“A complete log of this run can be fund in: C\Users\用户\AppData\Roaming\npm-cache_logs\2018-9-24T10_55_24_806Z-debug.log”这个错误，这是由于项目中多次安装模板失败引起，解决方法：</p>
-<ol>
-<li>将node_modules文件删除（本人亲试，不删除好像也可以）</li>
-<li>输入命令：npm cache clean –force 清楚缓存</li>
-<li>输入命令：npm install 重新安装一次</li>
-</ol>
-<h2 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h2><p>在生成新文章之后使用“hexo d -g”命令部署文章到github中，可能会出现这样的情况“warning: LF will be replaced by CRLF | fatal: CRLF would be replaced by LF”这是因为Windows使用回车和换行两个字符来结束一行，而Mac和Linux只使用换行一个字符。而git提供了一个换行符检查功能：</p>
-<ol>
-<li>false 不做任何检查</li>
-<li>warn  在提交时检查并警告</li>
-<li>true  在提交时检查，如果发现混用则拒绝</li>
-</ol>
-<p>解决办法：</p>
-<p>输入命令：git config –global core.autocrlf false</p>
-<h2 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h2><p>部署完文章打开网站却没有显示，这是因为需要时间缓冲不能立即成功，可以在输入命令“hexo d -g”之前输入“hexo clean”,先清除缓存，可以快速部署成功。</p>
-<h2 id="问题四"><a href="#问题四" class="headerlink" title="问题四"></a>问题四</h2><p><img src="https://img2018.cnblogs.com/blog/1442702/201904/1442702-20190403230312023-1949033585.jpg" alt=""></p>
-<p>hexo d是发布到github的命令，目测你的错误是链接到github超时。https的默认端口是443 可能是因为网速的原因，可以再次尝试。</p>
+                <p>1.在使用ping命令，如果对方没有wsf，可以使用注入，使用符号截断，常见的符号：<br>$’<br>‘;’<br>‘|’<br>‘-’<br>‘(’<br>‘)’<br>‘反引号’<br>‘||’<br>‘&amp;&amp;’<br>‘&amp;’<br>‘}’<br>‘{’</p>
+<p>几个命令： ls ,cat&lt; ,cat</p>
+<p>格式：ip=127.0.0.1;cat /home/flag.txt</p>
+<p>一般flag.txt在home目录下，可以尝试一下</p>
+<p>此类命令执行函数依赖PHP配置文件的设置，如果配置选项 safe_mode 设置为 off，此类命令不可执行，必须设置为 On<br>的情况下，才可执行。PHP 默认是关闭的。</p>
+<p>2.vim中的swp即swap（交换分区）的简写，在编辑文件时产生，它是隐藏文件。这个文件是一个临时交换文件，用来备份缓冲区中的内容。</p>
+<p>当你用多个程序编辑同一个文件时选择readonly</p>
+<p>非常规退出时<br>当强行关闭vi时，比如电源突然断掉或者你使用了Ctrl+ZZ，vi自动生成一个.swp文件，下次再编辑时就会出现一些提示。</p>
+<p>命令： vi -r xxx.c 恢复；rm -rf xxx.swp 删除防止下一次弹出</p>
+<p>在vim配置中设置：</p>
+<p>禁止产生：set noswapfile</p>
+<p>同意产生：set noswapfile</p>
+<p>3.挂载命令 mount 光盘 目录</p>
+<p>strngs 光盘 | grep flag  匹配</p>
 
             </div>
             <hr>
@@ -569,7 +564,7 @@
                     </span>
                     <a href="https://wangxingdage.github.io" class="b-link-green">Hexo</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/03/hexo搭建及部分问题/" class="b-link-green">hexo搭建及部分问题</a>
+                    <a href="/2019/04/26/ping命令注入/" class="b-link-green">ping命令注入</a>
                 </p>
             </div>
         </div>
@@ -594,22 +589,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/04/26/ping命令注入/">
+                <a href="/2019/05/14/New Document/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="ping命令注入">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">ping命令注入</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">1.在使用ping命令，如果对方没有wsf，可以使用注入，使用符号截断，常见的符号：$’‘;’‘|’‘-’‘(’‘)’‘反引号’‘||’‘&amp;&amp;’‘&amp;’‘}’‘{’
-几个命令： ls ,cat&lt; ,cat
-格式：</div>
+                    <div class="summary">ISCC部分题解
+###web1
+三位数字密码可以使用burpsuite直接爆破，唯一难点为验证码绕过操作如下：
+1.打开链接输入信息抓包
+
+2.将 PHPSESSID=与user_code=后面的数据删掉，放到intruder三位数字爆破</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-26
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-14
                         </span>
                         <span class="publish-author">
                             
@@ -626,7 +624,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/04/03/hexo搭建及部分问题/">
@@ -654,7 +652,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
